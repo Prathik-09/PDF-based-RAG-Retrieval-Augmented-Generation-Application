@@ -1,0 +1,213 @@
+COVARIANCE VS CORRELATION
+
+1.  OVERVIEW
+
+Covariance and correlation are statistical measures used to describe how
+two variables change in relation to each other.
+
+Both help answer a question such as: “When one variable changes, does
+the other variable tend to change too?”
+
+The main difference is: - Covariance describes the direction of the
+relationship, but its value depends on the units and scale of the
+variables. - Correlation describes both the direction and strength of a
+linear relationship using a standardized value between -1 and +1.
+
+2.  WHAT IS COVARIANCE?
+
+Covariance measures whether two variables tend to move together or in
+opposite directions.
+
+Interpretation: - Positive covariance: The two variables tend to be
+above or below their means at the same time. They generally move in the
+same direction. - Negative covariance: When one variable is above its
+mean, the other tends to be below its mean. They generally move in
+opposite directions. - Covariance near zero: There is little or no
+linear co-movement indicated by the covariance. This does not prove that
+the variables are independent; a nonlinear relationship may still exist.
+
+Population covariance formula:
+
+Cov(X, Y) = E[(X - mean(X))(Y - mean(Y))]
+
+Sample covariance formula:
+
+s_xy = sum((x_i - mean(x))(y_i - mean(y))) / (n - 1)
+
+Where: - X and Y are the two variables. - x_i and y_i are paired
+observations. - mean(X) and mean(Y) are their sample means. - n is the
+number of paired observations. - The sample formula uses n - 1 in the
+denominator.
+
+Important properties: - Covariance is symmetric: Cov(X, Y) = Cov(Y,
+X). - Covariance of a variable with itself is its variance: Cov(X, X) =
+Var(X). - Covariance is affected by the units and scale of both
+variables. - Its magnitude is therefore difficult to interpret on its
+own. - Changing the units of a variable changes the numerical
+covariance.
+
+3.  WHAT IS CORRELATION?
+
+Correlation measures the strength and direction of the linear
+relationship between two variables.
+
+The most common measure is the Pearson correlation coefficient.
+
+Pearson correlation formula:
+
+r = Cov(X, Y) / (standard_deviation(X) * standard_deviation(Y))
+
+For a sample:
+
+r = s_xy / (s_x * s_y)
+
+Where: - s_xy is the sample covariance. - s_x is the sample standard
+deviation of X. - s_y is the sample standard deviation of Y.
+
+The Pearson correlation coefficient always lies between -1 and +1.
+
+Interpretation: - +1: Perfect positive linear relationship. - A value
+close to +1: Strong positive linear relationship. - 0: No linear
+relationship. - A value close to -1: Strong negative linear
+relationship. - -1: Perfect negative linear relationship.
+
+A correlation of zero does not necessarily mean there is no
+relationship. It means there is no linear association measured by
+Pearson correlation. A nonlinear relationship may still exist.
+
+4.  DIFFERENCE BETWEEN COVARIANCE AND CORRELATION
+
+Covariance: - Indicates whether two variables tend to move in the same
+or opposite directions. - Can be positive, negative, or zero. - Has
+units equal to the product of the units of the two variables. - Is not
+restricted to a fixed numerical range. - Its magnitude is affected by
+measurement scale. - Is harder to compare across datasets with different
+units or scales.
+
+Correlation: - Indicates the direction and strength of a linear
+relationship. - Ranges from -1 to +1. - Has no units; it is
+dimensionless. - Is standardized using the standard deviations of both
+variables. - Is not changed by positive changes in measurement units. -
+Is easier to compare across different datasets.
+
+5.  SIMPLE EXAMPLE
+
+Suppose a teacher records study hours and exam scores for five students.
+
+Student Study Hours (X) Exam Score (Y) A 1 50 B 2 55 C 3 65 D 4 70 E 5
+80
+
+In this example, students who study more hours generally receive higher
+exam scores.
+
+The covariance is positive because study hours and exam scores tend to
+increase together.
+
+The Pearson correlation is also positive and close to +1 because the
+observations show a strong positive linear relationship.
+
+The exact covariance depends on the units used for study hours and exam
+scores. The correlation remains the same if study hours are converted
+from hours to minutes, provided the conversion is a positive scale
+change.
+
+This example shows: - Covariance tells us the direction of
+co-movement. - Correlation tells us the direction and standardized
+strength of the linear relationship.
+
+6.  WHY CORRELATION IS EASIER TO INTERPRET
+
+Imagine one dataset measures height in centimeters and weight in
+kilograms. Another measures height in inches and weight in pounds.
+
+The covariance values will differ because the measurement units differ.
+
+The correlation coefficient will remain unchanged under positive unit
+conversions. This makes correlation more suitable for comparing the
+strength of linear relationships across variables measured in different
+units.
+
+7.  IMPORTANT: CORRELATION DOES NOT MEAN CAUSATION
+
+A correlation between two variables does not prove that one variable
+causes the other.
+
+For example, ice cream sales and swimming incidents may both increase
+during hot weather. This does not mean ice cream sales cause swimming
+incidents. Temperature may be a third variable influencing both.
+
+When interpreting correlation, consider: - Confounding variables. -
+Reverse causality. - The possibility of coincidence. - The quality and
+size of the dataset. - Whether the relationship is linear.
+
+8.  WHEN SHOULD YOU USE EACH MEASURE?
+
+Use covariance when: - You need to understand the direction of joint
+variation. - You are working with covariance matrices in statistics or
+machine learning. - You need covariance as an intermediate calculation,
+such as when calculating correlation. - You are studying portfolio
+variance or multivariate statistical models.
+
+Use correlation when: - You want an easy-to-interpret measure of linear
+association. - You want to compare relationships across variables with
+different units. - You are performing exploratory data analysis. - You
+want to identify variables that may be strongly linearly associated.
+
+9.  PEARSON CORRELATION AND OTHER TYPES OF CORRELATION
+
+Pearson correlation measures linear association and is commonly used for
+numerical variables when its assumptions are appropriate.
+
+Spearman rank correlation measures the strength and direction of a
+monotonic relationship using ranks. It can be useful for ordinal data or
+relationships that are monotonic but not linear.
+
+Kendall’s tau is another rank-based measure of ordinal association. It
+is based on concordant and discordant pairs.
+
+Do not treat all correlation measures as interchangeable. Choose the
+measure based on the data and the type of relationship being studied.
+
+10. COMMON MISUNDERSTANDINGS
+
+Misunderstanding: Covariance must be between -1 and +1. Correction:
+Covariance has no fixed range. Correlation is bounded between -1 and +1.
+
+Misunderstanding: A correlation of zero means the variables are
+completely unrelated. Correction: It means there is no measured linear
+association. A nonlinear relationship may exist.
+
+Misunderstanding: A high correlation proves causation. Correction:
+Correlation alone cannot establish cause and effect.
+
+Misunderstanding: Positive covariance means one variable causes the
+other to increase. Correction: Positive covariance indicates that the
+variables tend to move in the same direction, not that one causes the
+other.
+
+Misunderstanding: Covariance and correlation are the same. Correction:
+Both describe association, but covariance is scale-dependent while
+correlation is standardized.
+
+11. QUICK SUMMARY
+
+Covariance: - Measures the direction of joint variation. - Positive
+means variables tend to move together. - Negative means variables tend
+to move in opposite directions. - Zero means no linear co-movement is
+indicated. - Depends on the variables’ units and scales. - Has no fixed
+numerical range.
+
+Correlation: - Measures direction and strength of linear association. -
+Positive means a positive linear association. - Negative means a
+negative linear association. - Zero means no linear association measured
+by the chosen coefficient. - Is dimensionless. - Always ranges from -1
+to +1.
+
+KEY TAKEAWAY
+
+Covariance tells us how two variables vary together, including the
+direction of their joint movement. Correlation standardizes covariance
+so that the direction and strength of a linear relationship can be
+interpreted on a common scale from -1 to +1.
+
+Neither covariance nor correlation, by itself, proves causation.

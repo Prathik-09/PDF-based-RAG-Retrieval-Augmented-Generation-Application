@@ -1,0 +1,41 @@
+
+# LangChain core
+langchain
+langchain-core
+langchain-community
+langchain-classic
+
+# LangChain integrations
+langchain-groq
+langchain-chroma
+langchain-huggingface
+
+# Vector database
+chromadb
+
+# Embeddings
+sentence-transformers
+transformers
+torch
+
+# Document loading
+pypdf
+unstructured
+
+# Text splitting
+langchain-text-splitters
+
+# Environment variables
+python-dotenv
+
+# Frontend
+streamlit
+
+# API development (optional)
+fastapi
+uvicorn
+
+# Utilities
+numpy
+pandas
+tiktoken
